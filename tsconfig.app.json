@@ -1,0 +1,40 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@components": ["src/shared/components"],
+      "@constants": ["src/shared/constants"],
+      "@types": ["src/shared/types"],
+      "@assets": ["src/assets"],
+      "@layouts": ["src/layouts"],
+      "@pages": ["src/pages"],
+      "@router": ["src/router"],
+      "@stores": ["src/stores"],
+      "@api": ["src/shared/api"]
+    }
+  },
+  "include": ["src", "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+}

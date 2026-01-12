@@ -1,0 +1,29 @@
+.icon-button {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+  color: #6a7282;
+
+  &--size-auto {
+    width: auto;
+    height: auto;
+  }
+
+  &--size-small {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  &--size-big {
+    width: 2.375rem;
+    height: 2.375rem;
+  }
+
+  &--variant-bordered {
+    border: 1px solid black;
+    border-radius: 0.5rem;
+  }
+}
