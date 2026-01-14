@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T">
 import { ArrowDown, ArrowUp } from "@assets";
-import { computed, ref } from "vue";
+import { computed, onMounted, onUnmounted, ref } from "vue";
 import type { TSelectorProps } from "./types";
 import DefaultOptionComponent from "./ui/DefaultOptionComponent.vue";
 
@@ -21,7 +21,9 @@ const classSizes = {
 } as const;
 
 const isOpen = ref(false);
+const containerRef = ref<HTMLElement | null>(null);
 const selectedOption = computed(() => options.find((option) => option.value === value)) || null;
+const iconWidth = computed(() => (size === "big" ? "10px" : "4px"));
 
 const emit = defineEmits<{
   onSelect: [option: T | null];
@@ -39,17 +41,30 @@ const handleSelect = (option: T) => {
   return handleToggleMenu();
 };
 
-const iconWidth = computed(() => (size === "big" ? "10px" : "4px"));
+const handleClickOutside = (event: MouseEvent) => {
+  if (containerRef.value && !containerRef.value.contains(event.target as Node)) {
+    isOpen.value = false;
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("click", handleClickOutside);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("click", handleClickOutside);
+});
 </script>
 
 <template>
   <div
+    ref="containerRef"
     class="selector"
     :class="classSizes[size]"
   >
     <button
       class="selector__button"
-      @click="handleToggleMenu"
+      @click.stop="handleToggleMenu"
     >
       <component
         :is="customItem"
