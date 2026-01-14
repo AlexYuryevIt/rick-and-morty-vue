@@ -17,7 +17,6 @@ const emit = defineEmits(["click"]);
     <slot />
   </button>
 </template>
-
-<style scoped>
-@import "./IconButton.styles.scss";
+<style scoped lang="scss">
+@use "./IconButton.styles.scss";
 </style>

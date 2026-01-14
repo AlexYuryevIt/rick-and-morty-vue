@@ -29,7 +29,7 @@
       "@constants": ["src/shared/constants"],
       "@types": ["src/shared/types"],
       "@assets": ["src/assets"],
-      "@layouts": ["src/layouts"],
+      "@layouts": ["src/shared/layouts"],
       "@pages": ["src/pages"],
       "@router": ["src/router"],
       "@stores": ["src/stores"],
