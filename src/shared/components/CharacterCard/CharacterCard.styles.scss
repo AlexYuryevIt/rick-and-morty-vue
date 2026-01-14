@@ -1,4 +1,6 @@
 .character__card {
+  position: relative;
+
   padding: 7px;
 
   width: 508px;
@@ -12,6 +14,12 @@
 
   background-color: white;
   box-shadow: 0 0 5px 0 rgb(0 0 0 / 0.25);
+
+  &:hover {
+    .character__buttons-wrapper {
+      opacity: 1;
+    }
+  }
 }
 
 .character__image {
@@ -30,4 +38,27 @@
 .character__heading {
   font-size: 16px;
   margin: 0;
+}
+
+.character__buttons-wrapper {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.character__edit-button {
+  cursor: pointer;
+}
+
+.character__status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }

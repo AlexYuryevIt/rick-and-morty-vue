@@ -14,6 +14,6 @@ defineProps<TCharacterRowProps>();
   </div>
 </template>
 
-<style scoped>
-@import "./CharacterRow.styles.scss";
+<style scoped lang="scss">
+@use "./CharacterRow.styles.scss";
 </style>

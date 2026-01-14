@@ -1,3 +1,11 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+
 .character-list {
   list-style: none;
   padding: 0;

@@ -24,6 +24,6 @@ const props = defineProps<TCharacterRowListProps>();
   </div>
 </template>
 
-<style scoped>
-@import "./CharacterRowList.styles.scss";
+<style scoped lang="scss">
+@use "./CharacterRowList.styles.scss";
 </style>

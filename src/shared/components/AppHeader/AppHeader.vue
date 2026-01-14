@@ -41,6 +41,6 @@ const handleChangeTheme = () =>
   </header>
 </template>
 
-<style scoped>
-@import "./AppHeader.styles.scss";
+<style scoped lang="scss">
+@use "./AppHeader.styles.scss";
 </style>

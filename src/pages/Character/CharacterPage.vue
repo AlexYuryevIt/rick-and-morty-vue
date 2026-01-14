@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { CharacterCard } from "@components";
-</script>
+<script setup lang="ts"></script>
 
-<template>
-  <CharacterCard />
-</template>
+<template></template>
